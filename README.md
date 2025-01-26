@@ -1,4 +1,4 @@
-⚠️⚠️⚠️Las preguntas y respuestas que he intercambiado con chat gpt te las he puesto completas hay muchas lineas son casi todas código⚠️⚠️⚠️
+⚠️⚠️⚠️Las preguntas (son las que están en negrita) y respuestas que he intercambiado con chat gpt te las he puesto completas hay muchas lineas son casi todas código⚠️⚠️⚠️
 
 Para este trabajo lo que he querido hacer es un programa en el que tu pongas los datos de ingresos/gastos de los meses que elijas en un cuadro de texto y te muestre una gráfica donde puedas comparar los ingresos y gastos que ha tenido una empresa por ejemplo entre 2020 y 2024, mostrandote el beneficio que has obtenido. Además quien introduzca los datos se le pedirán una serie de credenciales para tener constancia de quien puso esos datos (nombre, telefono(este solo numérico) y DNI) en los que nombre y dni serán de tipo string. Una vez introducidos los datos tanto de la persona como de las gráficas se guardará la gráfica automaticamente en un PNG y las variables en variables globales. Todo esto se podrá eliminar SOLO de la interfaz gráfica con un botón de eliminar.
 
@@ -38,7 +38,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 
-## Función para calcular el interés compuesto
 def calcular_interes_compuesto(monto_inicial, tasa, tiempo):
     montos = []
     for t in range(1, tiempo + 1):
@@ -46,7 +45,6 @@ def calcular_interes_compuesto(monto_inicial, tasa, tiempo):
         montos.append(monto)
     return montos
 
-## Función para mostrar el gráfico en la interfaz de Tkinter
 def mostrar_grafico():
     try:
         # Obtener valores de los campos de entrada
@@ -73,15 +71,12 @@ def mostrar_grafico():
     except ValueError:
         messagebox.showerror("Error", "Por favor ingresa valores válidos.")
 
-## Crear la ventana principal
 ventana = tk.Tk()
 ventana.title("Calculadora Financiera")
 
-## Crear el frame para los controles
 frame_controles = tk.Frame(ventana)
 frame_controles.pack(pady=20)
 
-## Etiquetas y campos de entrada
 tk.Label(frame_controles, text="Monto inicial ($):").grid(row=0, column=0, padx=10, pady=5)
 entry_monto_inicial = tk.Entry(frame_controles)
 entry_monto_inicial.grid(row=0, column=1, padx=10, pady=5)
@@ -94,15 +89,12 @@ tk.Label(frame_controles, text="Tiempo (años):").grid(row=2, column=0, padx=10,
 entry_tiempo = tk.Entry(frame_controles)
 entry_tiempo.grid(row=2, column=1, padx=10, pady=5)
 
-## Botón para calcular y mostrar el gráfico
 btn_calcular = tk.Button(frame_controles, text="Calcular y Mostrar Gráfico", command=mostrar_grafico)
 btn_calcular.grid(row=3, columnspan=2, pady=10)
 
-## Crear el frame para el gráfico
 frame_grafico = tk.Frame(ventana)
 frame_grafico.pack()
 
-## Iniciar la aplicación
 ventana.mainloop()
 ----------------------------------------------------------------------------------------------------------------------
 
@@ -139,20 +131,16 @@ Aquí tienes el código con solo la interfaz gráfica básica:
 -------------------------------------------------------Codigo---------------------------------------------------------
 import tkinter as tk
 
-## Función para mostrar el mensaje al presionar el botón
 def boton_presionado():
     # Aquí se podría agregar la lógica que quieras, por ahora solo es un placeholder
     print("El botón fue presionado")
 
-## Crear la ventana principal
 ventana = tk.Tk()
 ventana.title("Calculadora de Beneficios")
 
-## Crear el frame para los controles
 frame_controles = tk.Frame(ventana)
 frame_controles.pack(pady=20)
 
-## Etiquetas y campos de entrada
 tk.Label(frame_controles, text="Ingreso Total del Mes ($):").grid(row=0, column=0, padx=10, pady=5)
 entry_ingreso = tk.Entry(frame_controles)
 entry_ingreso.grid(row=0, column=1, padx=10, pady=5)
@@ -161,11 +149,9 @@ tk.Label(frame_controles, text="Gasto Total del Mes ($):").grid(row=1, column=0,
 entry_gasto = tk.Entry(frame_controles)
 entry_gasto.grid(row=1, column=1, padx=10, pady=5)
 
-## Botón para mostrar el gráfico de beneficios
 btn_grafico_beneficios = tk.Button(frame_controles, text="Gráfico Beneficios", command=boton_presionado)
 btn_grafico_beneficios.grid(row=2, columnspan=2, pady=10)
 
-## Iniciar la aplicación
 ventana.mainloop()
 ----------------------------------------------------------------------------------------------------------------------
 
@@ -384,7 +370,6 @@ from tkinter import simpledialog
 import matplotlib.pyplot as plt
 import numpy as np
 
-## Configurar estilos globales de Matplotlib
 plt.style.use('seaborn')  # Estilo base
 plt.rcParams.update({
     'axes.titlesize': 16,
@@ -539,7 +524,6 @@ from tkinter import simpledialog
 import matplotlib.pyplot as plt
 import numpy as np
 
-## Cambiar a 'ggplot' para evitar dependencias externas
 plt.style.use('ggplot')  
 plt.rcParams.update({
     'axes.titlesize': 16,
@@ -727,7 +711,6 @@ from tkinter import simpledialog
 import matplotlib.pyplot as plt
 import numpy as np
 
-## Cambiar a 'ggplot' para evitar dependencias externas
 plt.style.use('ggplot')  
 plt.rcParams.update({
     'axes.titlesize': 16,
@@ -928,7 +911,6 @@ from tkinter import simpledialog, messagebox
 import matplotlib.pyplot as plt
 import numpy as np
 
-## Cambiar a 'ggplot' para evitar dependencias externas
 plt.style.use('ggplot')  
 plt.rcParams.update({
     'axes.titlesize': 16,
@@ -1141,7 +1123,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 import os
 
-## Cambiar a 'ggplot' para evitar dependencias externas
 plt.style.use('ggplot')  
 plt.rcParams.update({
     'axes.titlesize': 16,
@@ -1372,7 +1353,6 @@ import numpy as np
 import os
 from PIL import Image
 
-## Cambiar a 'ggplot' para evitar dependencias externas
 plt.style.use('ggplot')  
 plt.rcParams.update({
     'axes.titlesize': 16,
@@ -1591,7 +1571,6 @@ center_window(ventana, 960, 540)
 botones_frame = tk.Frame(ventana)
 botones_frame.pack(pady=20)
 
-## Cargar los botones guardados al iniciar el programa
 cargar_botones_guardados()
 
 boton_grafico_ingresos_gastos = tk.Button(botones_frame, text="Gráfica ingresos/gastos", command=graficar_ingresos_gastos)
@@ -1625,7 +1604,6 @@ import os
 from PIL import Image
 import pickle  # Usamos pickle para guardar los botones de forma persistente
 
-## Cambiar a 'ggplot' para evitar dependencias externas
 plt.style.use('ggplot')  
 plt.rcParams.update({
     'axes.titlesize': 16,
@@ -1854,18 +1832,14 @@ ventana = tk.Tk()
 ventana.title("Calculadora de Beneficios")
 center_window(ventana, 960, 540)
 
-## Crear un frame para los botones principales y los botones de las gráficas
 frame_principal = tk.Frame(ventana)
 frame_principal.pack(pady=20)
 
-## Crear frame para los botones con el nombre de las gráficas guardadas
 botones_frame = tk.Frame(ventana)
 botones_frame.pack(pady=20)
 
-## Cargar los botones guardados al iniciar el programa
 cargar_botones_guardados()
 
-## Botón para crear la gráfica de ingresos/gastos
 boton_grafico_ingresos_gastos = tk.Button(frame_principal, text="Gráfica ingresos/gastos", command=graficar_ingresos_gastos)
 boton_grafico_ingresos_gastos.pack(pady=10)
 
@@ -1885,7 +1859,6 @@ import os
 from PIL import Image
 import pickle  # Usamos pickle para guardar los botones de forma persistente
 
-## Cambiar a 'ggplot' para evitar dependencias externas
 plt.style.use('ggplot')  
 plt.rcParams.update({
     'axes.titlesize': 16,
@@ -2105,24 +2078,19 @@ def agregar_boton(nombre_grafica):
     with open("botones_guardados.pkl", "wb") as f:
         pickle.dump(botones_guardados, f)
 
-## Crear la ventana principal
 ventana = tk.Tk()
 ventana.title("Gestión de Ingresos y Gastos")
 center_window(ventana, 500, 500)
 
-## Crear el botón de "Eliminar"
 boton_eliminar = tk.Button(ventana, text="Eliminar", command=lambda: print("Botón eliminar presionado"))
 boton_eliminar.pack(side="top", anchor="ne", padx=20, pady=20)
 
-## Crear un contenedor para los botones de gráficas
 botones_frame = tk.Frame(ventana)
 botones_frame.pack(pady=20)
 
-## Botón para generar gráficos
 boton_graficar = tk.Button(ventana, text="Generar Gráfica", command=graficar_ingresos_gastos)
 boton_graficar.pack(pady=20)
 
-## Iniciar la interfaz
 ventana.mainloop()
 ----------------------------------------------------------------------------------------------------------------------
 
@@ -2138,7 +2106,6 @@ import os
 from PIL import Image
 import pickle  # Usamos pickle para guardar los botones de forma persistente
 
-## Cambiar a 'ggplot' para evitar dependencias externas
 plt.style.use('ggplot')  
 plt.rcParams.update({
     'axes.titlesize': 16,
@@ -2363,24 +2330,19 @@ def eliminar_botones():
     for boton in botones_frame.winfo_children():
         boton.destroy()
 
-## Crear la ventana principal
 ventana = tk.Tk()
 ventana.title("Gestión de Ingresos y Gastos")
 center_window(ventana, 500, 500)
 
-## Crear el botón de "Eliminar" y moverlo a la parte derecha y arriba
 boton_eliminar = tk.Button(ventana, text="Eliminar", command=eliminar_botones)
 boton_eliminar.pack(side="top", anchor="ne", padx=20, pady=20)
 
-## Crear un contenedor para los botones de gráficas
 botones_frame = tk.Frame(ventana)
 botones_frame.pack(pady=20)
 
-## Botón para generar gráficos (con el nombre original)
 boton_graficar = tk.Button(ventana, text="Gráficas ingresos/gastos", command=graficar_ingresos_gastos)
 boton_graficar.pack(pady=10)
 
-## Ejecutar la interfaz
 ventana.mainloop()
 ----------------------------------------------------------------------------------------------------------------------
 
@@ -2442,14 +2404,11 @@ def cargar_botones_guardados():
 Paso 3: Llamar a la función cargar_botones_guardados() al inicio del programa
 Asegúrate de que la función cargar_botones_guardados() se ejecute cuando inicie la ventana principal, para cargar los botones de las gráficas guardadas. Por ejemplo, podrías llamar a esta función justo después de crear la ventana principal (al principio de tu código):
 -------------------------------------------------------Codigo---------------------------------------------------------
-## Crear la ventana principal
 ventana = tk.Tk()
 ventana.title("Gestión de Gráficas")
 
-## Llamar a cargar los botones guardados al inicio
 cargar_botones_guardados()
 ----------------------------------------------------------------------------------------------------------------------
-## Resto de tu código para configurar la interfaz...
 Resumen
 Guardar los botones en el archivo botones_guardados.pkl cuando se crea una nueva gráfica.
 Cargar los botones desde el archivo botones_guardados.pkl cuando se inicia el programa para que los botones aparezcan.
@@ -2475,7 +2434,6 @@ import os
 from PIL import Image
 import pickle  # Usamos pickle para guardar los botones de forma persistente
 
-## Cambiar a 'ggplot' para evitar dependencias externas
 plt.style.use('ggplot')  
 plt.rcParams.update({
     'axes.titlesize': 16,
@@ -2739,22 +2697,17 @@ def cargar_botones_guardados():
                       datos_graficas[i]["telefono"], 
                       datos_graficas[i]["dni"])
 
-## Crear la ventana principal
 ventana = tk.Tk()
 ventana.title("Gestión de Gráficas")
 
-## Crear el frame para los botones de las gráficas
 botones_frame = tk.Frame(ventana)
 botones_frame.pack(padx=10, pady=10, anchor='w')
 
-## Llamar a cargar los botones guardados al inicio
 cargar_botones_guardados()
 
-## Llamar a la función para graficar ingresos/gastos
 boton_grafica_ingresos_gastos = tk.Button(ventana, text="Gráficas Ingresos/Gastos", command=graficar_ingresos_gastos)
 boton_grafica_ingresos_gastos.pack(pady=20)
 
-## Eliminar botones guardados
 def eliminar_botones_guardados():
     try:
         with open("botones_guardados.pkl", "wb") as f:
@@ -2765,7 +2718,6 @@ def eliminar_botones_guardados():
     for boton in botones_frame.winfo_children():
         boton.destroy()  # Eliminar todos los botones de la interfaz
 
-## Crear el botón para eliminar botones
 boton_eliminar = tk.Button(ventana, text="Eliminar Botones", command=eliminar_botones_guardados)
 boton_eliminar.pack(pady=20)
 
